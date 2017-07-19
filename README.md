@@ -25,25 +25,28 @@ app.use(redirectSSL.create({ redirectPort: 8443 }))
 
 ### xForwardedProto
 - Default: `true`
+    
 Trust and check `x-forwarded-proto` header for HTTPS detection.
 
 ### redirectPort
 - Default: `443`
+    
 Redirect users to this port for HTTPS. (`:443` is omitted from URL as is default for `https://` schema)
 
 ### redirectHost
-- Default: 'undefined`
+- Default: `undefined`
+   
 Redirects using this value as host, if omitted will use request host for redirects.
 
 **NOTE** It should not contain schema or trailing slashes. (Example: `google.com`)
 
 ### Status Code
-- Default: `307` *(Temporary Redirect)*
-
+- Default: `307` *Temporary Redirect*
+   
 Status code when redirecting. The reason of choosing `307` for default is:
-- It prevents changing method from `POST` TO `GET` by user agents. (If you don't care, use `302`*(Found)*)
-- Is temporary so if for any reason HTTPS disables on server clients won't hurt. (If you need permanent, use `308`*(Permanent Redirect)* or `301`*(Moved Permanently)*)
-- See [this question](https://stackoverflow.com/questions/42136829/whats-difference-between-http-301-and-308-status-codes), [307 on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/307), and [rfc 7231 section 6.4.7](https://tools.ietf.org/html/rfc7231#section-6.4.7) for more info.
+- It prevents changing method from `POST` TO `GET` by user agents. (If you don't care, use `302` *Found*)
+- Is temporary so if for any reason HTTPS disables on server clients won't hurt. (If you need permanent, use `308` *Permanent Redirect* or `301` *Moved Permanently*)
+- See [This question](https://stackoverflow.com/questions/42136829/whats-difference-between-http-301-and-308-status-codes), [307 on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/307), and [RFC 7231 section 6.4.7](https://tools.ietf.org/html/rfc7231#section-6.4.7) for more info.
 
 ## License
-MIT - Nuxt.js
+MIT - [Nuxt.js](https://nuxtjs.org)
