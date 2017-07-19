@@ -1,0 +1,13 @@
+{
+  "name": "redirect-ssl",
+  "version": "0.0.1",
+  "description": "Connect middleware to enforce https",
+  "main": "index.js",
+  "repository": "git@github.com:nuxt/force-https.git",
+  "author": "Pooya Parsa <pooya@pi0.ir>",
+  "license": "MIT",
+  "devDependencies": {
+    "connect": "^3.6.2",
+    "pem": "^1.9.7"
+  }
+}
