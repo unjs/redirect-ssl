@@ -14,13 +14,9 @@ function create(options) {
     const _port = redirectPort === 443 ? '' : (': ' + redirectPort)
 
     return function redirectSSL(req, res, next) {
-        const _xForwardedProto = xForwardedProto && req.headers['x-forwarded-proto']
-        const _isEncrypted = req.connection.encrypted
-        const _protocol = req.protocol
-
-        // We check against 'http' as some checks may be unavailable
-        if (_isEncrypted && _xForwardedProto !== 'http' && _protocol !== 'http') {
-            return next()
+        if (req.connection.encrypted === true || req.protocol === 'https' ||
+            (xForwardedProto && req.headers['x-forwarded-proto'] && req.headers['x-forwarded-proto'].indexOf('https') !== -1)) {
+                return next()
         }
 
         const ـredirectURL = 'https://' + (redirectHost || req.headers.host) + _port + req.url
