@@ -9,6 +9,7 @@ This middleware tries to use 3 standard checks for HTTPS detection:
 - Test if `req.connection.encrypted` is `true`
 - Test if `req.protocol` is `https`
 - Test if `x-forwarded-proto` header contains `https`
+
 If all tests are unavailable, middleware just continues to avoid redirect loops.
 If any test fails, middleware ends reponse with a [307](#status-code) redirect to `https://[host][:port?][url]`.
 
