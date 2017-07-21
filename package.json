@@ -1,6 +1,6 @@
 {
   "name": "redirect-ssl",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Connect middleware to enforce https",
   "main": "index.js",
   "repository": "git@github.com:nuxt-community/redirect-ssl.git",
