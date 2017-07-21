@@ -40,6 +40,11 @@ Redirects using this value as host, if omitted will use request host for redirec
 
 **NOTE** It should not contain schema or trailing slashes. (Example: `google.com`)
 
+### redirectUnknown
+- Default: `true`
+
+Redirect when no SSL detection method is available too. **disable** this option if you encounter **redirect loops**.
+
 ### Status Code
 - Default: `307` *Temporary Redirect*
    

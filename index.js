@@ -5,22 +5,25 @@ const defaults = {
     xForwardedProto: true,
     redirectPort: 443,
     redirectHost: undefined,
+    redirectUnknown: true,
     statusCode: 307
 }
 
 // Creates new middleware using provided options
 function create(options) {
-    const { xForwardedProto, redirectPort, redirectHost, statusCode } = Object.assign({}, defaults, options)
+    const { xForwardedProto, redirectPort, redirectHost, statusCode, redirectUnknown } = Object.assign({}, defaults, options)
     const _port = redirectPort === 443 ? '' : (': ' + redirectPort)
 
     return function redirectSSL(req, res, next) {
-        if (isHTTPS(req, xForwardedProto) !== false) {
-            return next()
+        const _isHttps = isHTTPS(req, xForwardedProto)
+
+        if (_isHttps === false || (redirectUnknown && _isHttps === null)) {
+            const ـredirectURL = 'https://' + (redirectHost || req.headers.host) + _port + req.url
+            res.writeHead(statusCode, { Location: ـredirectURL })
+            return res.end()
         }
 
-        const ـredirectURL = 'https://' + (redirectHost || req.headers.host) + _port + req.url
-        res.writeHead(statusCode, { Location: ـredirectURL })
-        return res.end()
+        return next()
     }
 }
 
