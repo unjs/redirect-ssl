@@ -1,17 +1,8 @@
 # redirect-ssl
-> Connect/Express middleware to enforce https.
+> Connect/Express middleware to enforce https using [is-https](https://www.npmjs.com/package/is-https).
 
 [![npm](https://img.shields.io/npm/dt/redirect-ssl.svg?style=flat-square)](https://npmjs.com/package/redirect-ssl)
 [![npm (scoped with tag)](https://img.shields.io/npm/v/redirect-ssl/latest.svg?style=flat-square)](https://npmjs.com/package/redirect-ssl)
-
-## Behaviour
-This middleware tries to use 3 standard checks for HTTPS detection:
-- Test if `req.connection.encrypted` is `true`
-- Test if `req.protocol` is `https`
-- Test if `x-forwarded-proto` header contains `https`
-
-If all tests are unavailable, middleware just continues to avoid redirect loops.
-If any test fails, middleware ends reponse with a [307](#status-code) redirect to `https://[host][:port?][url]`.
 
 ## Usage
 Install package

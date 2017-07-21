@@ -9,5 +9,8 @@
   "devDependencies": {
     "connect": "^3.6.2",
     "pem": "^1.9.7"
+  },
+  "dependencies": {
+    "is-https": "^1.0.0"
   }
 }
