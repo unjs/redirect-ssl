@@ -6,19 +6,19 @@ const defaults = {
     redirectPort: 443,
     redirectHost: undefined,
     redirectUnknown: true,
-    statusCode: 307
+    statusCode: 307,
+    redirect: process.env.NODE_ENV === 'production'
 }
 
 // Creates new middleware using provided options
 function create(options) {
-    const { xForwardedProto, redirectPort, redirectHost, statusCode, redirectUnknown } = Object.assign({}, defaults, options)
+    const { xForwardedProto, redirectPort, redirectHost, statusCode, redirectUnknown, redirect } = Object.assign({}, defaults, options)
     const _port = redirectPort === 443 ? '' : (': ' + redirectPort)
 
     return function redirectSSL(req, res, next) {
         const _isHttps = isHTTPS(req, xForwardedProto)
-        const isProduction = process.env.NODE_ENV === 'production'
-        const shouldRedirect = _isHttps === false || (redirectUnknown && _isHttps === null)
-        if (isProduction && shouldRedirect) {
+        const shouldRedirect = _isHttps === false || (redirectUnknown && _isHttps === null) && redirect
+        if (shouldRedirect) {
             const ـredirectURL = 'https://' + (redirectHost || req.headers.host) + _port + req.url
             res.writeHead(statusCode, { Location: ـredirectURL })
             return res.end()
@@ -28,7 +28,7 @@ function create(options) {
     }
 }
 
-// Create a new instance using defaults 
+// Create a new instance using defaults
 const instance = create({})
 
 // Assign create to instance
