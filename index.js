@@ -16,8 +16,9 @@ function create(options) {
 
     return function redirectSSL(req, res, next) {
         const _isHttps = isHTTPS(req, xForwardedProto)
-
-        if (_isHttps === false || (redirectUnknown && _isHttps === null)) {
+        const isProduction = process.env.NODE_ENV === 'production'
+        const shouldRedirect = _isHttps === false || (redirectUnknown && _isHttps === null)
+        if (isProduction && shouldRedirect) {
             const ـredirectURL = 'https://' + (redirectHost || req.headers.host) + _port + req.url
             res.writeHead(statusCode, { Location: ـredirectURL })
             return res.end()
