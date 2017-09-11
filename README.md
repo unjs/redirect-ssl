@@ -25,17 +25,17 @@ app.use(redirectSSL.create({ redirectPort: 8443 }))
 
 ### xForwardedProto
 - Default: `true`
-    
+
 Trust and check `x-forwarded-proto` header for HTTPS detection.
 
 ### redirectPort
 - Default: `443`
-    
+
 Redirect users to this port for HTTPS. (`:443` is omitted from URL as is default for `https://` schema)
 
 ### redirectHost
 - Default: `undefined`
-   
+
 Redirects using this value as host, if omitted will use request host for redirects.
 
 **NOTE** It should not contain schema or trailing slashes. (Example: `google.com`)
@@ -47,7 +47,12 @@ Redirect when no SSL detection method is available too. **disable** this option 
 
 ### Status Code
 - Default: `307` *Temporary Redirect*
-   
+
+### redirect
+- Default: Only when `process.env.NODE_ENV === 'production'`
+
+Only enabled in production environment. Force redirecting locally by setting it to `true`
+
 Status code when redirecting. The reason of choosing `307` for default is:
 - It prevents changing method from `POST` TO `GET` by user agents. (If you don't care, use `302` *Found*)
 - Is temporary so if for any reason HTTPS disables on server clients won't hurt. (If you need permanent, use `308` *Permanent Redirect* or `301` *Moved Permanently*)
