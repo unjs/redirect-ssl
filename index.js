@@ -16,12 +16,14 @@ function create(options) {
     const _port = redirectPort === 443 ? '' : (': ' + redirectPort)
 
     return function redirectSSL(req, res, next) {
-        const _isHttps = isHTTPS(req, xForwardedProto)
-        const shouldRedirect = redirect && (_isHttps === false || (redirectUnknown && _isHttps === null))
-        if (shouldRedirect) {
-            const ـredirectURL = 'https://' + (redirectHost || req.headers.host) + _port + req.url
-            res.writeHead(statusCode, { Location: ـredirectURL })
-            return res.end()
+        if (redirect) {
+            const _isHttps = isHTTPS(req, xForwardedProto)
+            const shouldRedirect = _isHttps === false || (redirectUnknown && _isHttps === null)
+            if (shouldRedirect) {
+                const ـredirectURL = 'https://' + (redirectHost || req.headers.host) + _port + req.url
+                res.writeHead(statusCode, { Location: ـredirectURL })
+                return res.end()
+            }   
         }
 
         return next()
