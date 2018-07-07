@@ -5,12 +5,15 @@
 [![npm (scoped with tag)](https://img.shields.io/npm/v/redirect-ssl/latest.svg?style=flat-square)](https://npmjs.com/package/redirect-ssl)
 
 ## Usage
+
 Install package
+
 ```bash
 yarn add redirect-ssl # or npm install redirect-ssl
 ```
 
 Require and use middleware (Make sure adding it as the first in the chain)
+
 ```js
 const redirectSSL = require('redirect-ssl')
 
@@ -57,6 +60,11 @@ Status code when redirecting. The reason of choosing `307` for default is:
 - It prevents changing method from `POST` TO `GET` by user agents. (If you don't care, use `302` *Found*)
 - Is temporary so if for any reason HTTPS disables on server clients won't hurt. (If you need permanent, use `308` *Permanent Redirect* or `301` *Moved Permanently*)
 - See [This question](https://stackoverflow.com/questions/42136829/whats-difference-between-http-301-and-308-status-codes), [307 on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/307), and [RFC 7231 section 6.4.7](https://tools.ietf.org/html/rfc7231#section-6.4.7) for more info.
+
+### exclude
+- Default: `[]`
+
+An array of routes patterns for which redirection should be disabled.
 
 ## License
 MIT - [Nuxt.js](https://nuxtjs.org)
