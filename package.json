@@ -6,8 +6,17 @@
   "repository": "git@github.com:nuxt-community/redirect-ssl.git",
   "author": "Pooya Parsa <pooya@pi0.ir>",
   "license": "MIT",
+  "scripts": {
+    "eslint": "eslint . --ext js"
+  },
   "devDependencies": {
     "connect": "^3.6.2",
+    "eslint": "^5.0.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
     "pem": "^1.9.7"
   },
   "dependencies": {
