@@ -19,7 +19,7 @@ app.use('/', (req, res) => {
 })
 
 pem.createCertificate({ days: 1, selfSigned: true }, (err, keys) => {
-  https.createServer({key: keys.serviceKey, cert: keys.certificate}, app).listen(HTTPS_PORT)
+  https.createServer({ key: keys.serviceKey, cert: keys.certificate }, app).listen(HTTPS_PORT)
   if (err) {
     console.error(err)
   }

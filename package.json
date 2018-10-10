@@ -7,7 +7,8 @@
   "author": "Pooya Parsa <pooya@pi0.ir>",
   "license": "MIT",
   "scripts": {
-    "eslint": "eslint . --ext js",
+    "lint": "eslint . --ext js",
+    "test": "yarn lint",
     "release": "standard-version && git push --follow-tags && npm publish"
   },
   "devDependencies": {
