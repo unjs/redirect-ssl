@@ -7,17 +7,19 @@
   "author": "Pooya Parsa <pooya@pi0.ir>",
   "license": "MIT",
   "scripts": {
-    "eslint": "eslint . --ext js"
+    "eslint": "eslint . --ext js",
+    "release": "standard-version && git push --follow-tags && npm publish"
   },
   "devDependencies": {
-    "connect": "^3.6.2",
-    "eslint": "^5.0.1",
-    "eslint-config-standard": "^11.0.0",
-    "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-promise": "^3.8.0",
-    "eslint-plugin-standard": "^3.1.0",
-    "pem": "^1.9.7"
+    "connect": "^3.6.6",
+    "eslint": "^5.6.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "pem": "^1.13.1",
+    "standard-version": "^4.4.0"
   },
   "dependencies": {
     "is-https": "^1.0.0"
