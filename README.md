@@ -53,7 +53,7 @@ Redirects using this value as host, if omitted will use request host for redirec
 
 Redirect when no SSL detection method is available too. **disable** this option if you encounter **redirect loops**.
 
-### Status Code
+### statusCode
 - Default: `307` *Temporary Redirect*
 
 Status code when redirecting. The reason of choosing `307` for default is:
