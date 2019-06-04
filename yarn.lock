@@ -1678,9 +1678,9 @@ path-type@^3.0.0:
     pify "^3.0.0"
 
 pem@^1.13.1:
-  version "1.13.1"
-  resolved "https://registry.yarnpkg.com/pem/-/pem-1.13.1.tgz#57dd3e0c044fbcf709db026a737e1aad7dc8330f"
-  integrity sha512-gA/kl8/MWWBaVRRv8M4iRkaJXEbp0L9NyG5ggZlbvQxylZAq5K5wGesAZifs89kwL/m4EGdekXtBMOzXM9rv7w==
+  version "1.13.2"
+  resolved "https://registry.yarnpkg.com/pem/-/pem-1.13.2.tgz#7b68acbb590fdc13772bca487983cb84cd7b443e"
+  integrity sha512-MPJWuEb/r6AG+GpZi2JnfNtGAZDeL/8+ERKwXEWRuST5i+4lq/Uy36B352OWIUSPQGH+HR1HEDcIDi+8cKxXNg==
   dependencies:
     es6-promisify "^6.0.0"
     md5 "^2.2.1"
