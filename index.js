@@ -26,7 +26,7 @@ function create (options) {
     redirect,
     exclude
   } = Object.assign({}, defaults, options)
-  const _port = redirectPort === 443 ? '' : (': ' + redirectPort)
+  const _port = redirectPort === 443 ? '' : (':' + redirectPort)
 
   return function redirectSSL (req, res, next) {
     if (redirect && !isExcluded(req.url, exclude)) {
