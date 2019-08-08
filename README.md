@@ -12,25 +12,25 @@ Install package
 yarn add redirect-ssl # or npm install redirect-ssl
 ```
 
-Require and use redirect-ssl package, making sure to use this package as the first in your chain [express middleware chain](http://expressjs.com/en/guide/using-middleware.html):
+Require and use `redirect-ss`. Make sure to use this middlware as the first in your middleware chain (if using express see [middleware chain](http://expressjs.com/en/guide/using-middleware.html):
 
 ```js
 const redirectSSL = require('redirect-ssl')
 
 // Add middleware
 app.use(redirectSSL)
-app.use(nuxt.render)
+app.use(nuxt.render) // if using nuxt
 ```
 
-The redirect-ssl middleware also takes an array of options upon invocation:
+The `redirect-ssl` middleware also takes an array of options upon invocation:
 
-```
+```js
 app.use(redirectSSL.create({ redirectPort: 8443 }))
 ```
 
-## Usage w/ Nuxt
+## Usage with Nuxt
 
-Adding redirect-ssl to the [`serverMiddleware`](https://nuxtjs.org/api/configuration-servermiddleware#usage) array within in the [nuxt.config.js](https://nuxtjs.org/api/configuration-server) file is the preferred usage:
+Add the `redirect-ssl` to the [`serverMiddleware`](https://nuxtjs.org/api/configuration-servermiddleware#usage) array within in the [nuxt.config.js](https://nuxtjs.org/api/configuration-server) file is the preferred usage:
 
 ```js
 export default {
