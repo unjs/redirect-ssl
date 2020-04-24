@@ -28,6 +28,24 @@ app.use(redirectSSL)
 app.use(redirectSSL.create({ redirectPort: 8443 }))
 ```
 
+## Disable for non-production or localhost
+
+If you want to disable on `localhost`, use the exclude option:
+
+```js
+app.use(redirectSSL.create({
+   exclude: ['localhost']
+}))
+```
+
+Only enable in production environments:
+
+```js
+app.use(redirectSSL.create({
+  enabled: process.env.NODE_ENV === 'production'
+}))
+```
+
 ## Options
 
 ### xForwardedProto
@@ -39,14 +57,6 @@ Trust and check `x-forwarded-proto` header for HTTPS detection.
 ### enabled
 
 - Default: `true`
-
-**Example:** Only enable in production environments:
-
-```ts
-app.use(redirectSSL.create({
-  enabled: process.env.NODE_ENV === 'production'
-}))
-```
 
 ### redirectPort
 
