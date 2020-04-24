@@ -2,27 +2,27 @@
   "name": "redirect-ssl",
   "version": "1.4.1",
   "description": "Connect middleware to enforce https",
-  "main": "index.js",
-  "repository": "git@github.com:nuxt-community/redirect-ssl.git",
-  "author": "Pooya Parsa <pooya@pi0.ir>",
+  "repository": "nuxt-contrib/redirect-ssl",
   "license": "MIT",
+  "author": "Pooya Parsa <pooya@pi0.ir>",
+  "main": "index.js",
   "scripts": {
     "lint": "eslint . --ext js",
-    "test": "yarn lint",
-    "release": "standard-version && git push --follow-tags && npm publish"
-  },
-  "devDependencies": {
-    "connect": "^3.7.0",
-    "eslint": "^5.16.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-node": "^7.0.1",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "pem": "^1.13.1",
-    "standard-version": "^4.4.0"
+    "release": "standard-version && git push --follow-tags && npm publish",
+    "test": "yarn lint"
   },
   "dependencies": {
     "is-https": "^1.0.0"
+  },
+  "devDependencies": {
+    "connect": "latest",
+    "eslint": "latest",
+    "eslint-config-standard": "latest",
+    "eslint-plugin-import": "latest",
+    "eslint-plugin-node": "latest",
+    "eslint-plugin-promise": "latest",
+    "eslint-plugin-standard": "latest",
+    "pem": "latest",
+    "standard-version": "latest"
   }
 }
