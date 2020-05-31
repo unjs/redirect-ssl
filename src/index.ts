@@ -7,8 +7,8 @@ const defaults = {
   redirectPort: 443,
   redirectHost: undefined,
   redirectUnknown: true,
+  enabled: true,
   statusCode: 307,
-  redirect: process.env.NODE_ENV === 'production',
   exclude: []
 }
 type Options = Partial<typeof defaults>
@@ -21,31 +21,24 @@ type Middleware = MiddlewareFunction | {
 const isExcluded = (url: string, patterns = []) => patterns.some(pattern => url.match(pattern))
 
 // Creates new middleware using provided options
-function create (options: Options): Middleware {
-  const {
-    xForwardedProto,
-    redirectPort,
-    redirectHost,
-    statusCode,
-    redirectUnknown,
-    redirect,
-    exclude
-  } = Object.assign({}, defaults, options)
-  const _port = redirectPort === 443 ? '' : (':' + redirectPort)
+function create (_options?: Options): Middleware {
+  const options = { ...defaults, ..._options }
+
+  const _port = options.redirectPort === 443 ? '' : (':' + options.redirectPort)
 
   function redirectSSL (req: IncomingMessage, res: ServerResponse, next?: Function) {
     const url = req.url || ''
 
-    if (!redirect || isExcluded(url, exclude)) {
+    if (!options.enabled || isExcluded(url, options.exclude)) {
       return next && next()
     }
 
-    const _isHttps = isHTTPS(req, xForwardedProto)
-    const shouldRedirect = redirectUnknown ? !_isHttps : _isHttps === false
+    const _isHttps = isHTTPS(req, options.xForwardedProto)
+    const shouldRedirect = options.redirectUnknown ? !_isHttps : _isHttps === false
 
     if (shouldRedirect) {
-      const ـredirectURL = 'https://' + (redirectHost || req.headers.host) + _port + url
-      res.writeHead(statusCode, { Location: ـredirectURL })
+      const ـredirectURL = 'https://' + (options.redirectHost || req.headers.host) + _port + url
+      res.writeHead(options.statusCode, { Location: ـredirectURL })
       return res.end()
     }
 

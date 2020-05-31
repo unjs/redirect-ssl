@@ -36,11 +36,17 @@ app.use(redirectSSL.create({ redirectPort: 8443 }))
 
 Trust and check `x-forwarded-proto` header for HTTPS detection.
 
-### redirect
+### enabled
 
-- Default: `process.env.NODE_ENV === 'production'`
+- Default: `true`
 
-Only enabled in production environment. Force redirecting locally by setting this option to `true`.
+**Example:** Only enable in production environments:
+
+```ts
+app.use(redirectSSL.create({
+  enabled: process.env.NODE_ENV === 'production'
+}))
+```
 
 ### redirectPort
 
