@@ -33,5 +33,3 @@ app.listen(HTTP_PORT, () => {
   console.log(`Listining on http://${HOST}:${HTTP_PORT}`)
   console.log(`No SSL redirect on excluded URL: http://${HOST}:${HTTP_PORT}/health`)
 })
-
-
