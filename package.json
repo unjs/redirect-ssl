@@ -23,6 +23,6 @@
     "standard-version": "^4.4.0"
   },
   "dependencies": {
-    "is-https": "^1.0.0"
+    "is-https": "^2.0.0"
   }
 }
