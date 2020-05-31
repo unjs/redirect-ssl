@@ -1,8 +1,9 @@
 # redirect-ssl
 > Connect/Express middleware to enforce https using [is-https](https://www.npmjs.com/package/is-https).
 
-[![downloads](https://img.shields.io/npm/dm/redirect-ssl.svg?style=flat-square)](https://npmjs.com/package/redirect-ssl)
-[![version](https://img.shields.io/npm/v/redirect-ssl/latest.svg?style=flat-square)](https://npmjs.com/package/redirect-ssl)
+[![version][npm-v-src]][npm-v-href]
+[![downloads][npm-d-src]][npm-d-href]
+[![ci][ci-src]][ci-href]
 
 ## Usage
 
@@ -110,4 +111,14 @@ You will still need to install this package within your project for it work.
 
 ## License
 
-MIT
+MIT. Made with 💖
+
+<!-- Refs -->
+[npm-v-src]: https://img.shields.io/npm/v/redirect-ssl?style=flat-square
+[npm-v-href]: https://npmjs.com/package/redirect-ssl
+
+[npm-d-src]: https://img.shields.io/npm/dm/redirect-ssl?style=flat-square
+[npm-d-href]: https://npmjs.com/package/redirect-ssl
+
+[ci-src]: https://img.shields.io/github/workflow/status/nuxt-contrib/redirect-ssl/ci/master?style=flat-square
+[ci-href]: https://github.com/nuxt-contrib/redirect-ssl/actions?query=workflow%3Aci
