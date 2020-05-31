@@ -5,7 +5,7 @@ import redirectSSL from '../src'
 
 const HOST = 'localhost'
 const HTTP_PORT = 8080
-const HTTPS_PORT = 4430
+const HTTPS_PORT = 8443
 
 const app = connect()
 
