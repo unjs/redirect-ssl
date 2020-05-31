@@ -28,7 +28,7 @@ app.use(redirectSSL)
 app.use(redirectSSL.create({ redirectPort: 8443 }))
 ```
 
-## Disable for non-production or localhost
+### Disable for non-production or localhost
 
 If you want to disable on `localhost`, use the exclude option:
 
@@ -48,7 +48,7 @@ app.use(redirectSSL.create({
 
 ## Options
 
-### xForwardedProto
+### trustProxy
 
 - Default: `true`
 

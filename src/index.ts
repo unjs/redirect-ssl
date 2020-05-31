@@ -3,7 +3,7 @@ import isHTTPS from 'is-https'
 
 // Default options
 const defaults = {
-  xForwardedProto: true,
+  trustProxy: true,
   redirectPort: 443,
   redirectHost: '',
   redirectUnknown: true,
@@ -33,7 +33,7 @@ function create (_options?: Options): Middleware {
       return next && next()
     }
 
-    const _isHttps = isHTTPS(req, options.xForwardedProto)
+    const _isHttps = isHTTPS(req, options.trustProxy)
     const shouldRedirect = options.redirectUnknown ? !_isHttps : _isHttps === false
 
     if (shouldRedirect) {
