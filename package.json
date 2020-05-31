@@ -10,16 +10,21 @@
     "dist"
   ],
   "scripts": {
-    "build": "bili src/index.ts",
+    "build": "bili src/index.ts --minimal",
+    "dev": "ts-node --dir test server.ts",
     "lint": "eslint --ext ts .",
+    "typecheck": "tsc --noEmit -p . && tsc --noEmit -p ./test",
     "release": "yarn build && standard-version && git push --follow-tags && npm publish",
-    "test": "yarn lint"
+    "test": "yarn lint && yarn typecheck"
   },
   "dependencies": {
     "is-https": "^2.0.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "latest",
+    "@types/connect": "latest",
+    "@types/node": "latest",
+    "@types/pem": "latest",
     "bili": "latest",
     "connect": "latest",
     "eslint": "latest",
