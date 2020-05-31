@@ -1,28 +1,32 @@
 {
   "name": "redirect-ssl",
   "version": "1.4.1",
-  "description": "Connect middleware to enforce https",
-  "main": "index.js",
-  "repository": "git@github.com:nuxt-community/redirect-ssl.git",
-  "author": "Pooya Parsa <pooya@pi0.ir>",
+  "description": "Connect/Express middleware to enforce https",
+  "repository": "nuxt-contrib/redirect-ssl",
   "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "lint": "eslint . --ext js",
-    "test": "yarn lint",
-    "release": "standard-version && git push --follow-tags && npm publish"
-  },
-  "devDependencies": {
-    "connect": "^3.7.0",
-    "eslint": "^5.16.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-node": "^7.0.1",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "pem": "^1.13.1",
-    "standard-version": "^4.4.0"
+    "build": "bili src/index.ts",
+    "lint": "eslint --ext ts .",
+    "release": "yarn build && standard-version && git push --follow-tags && npm publish",
+    "test": "yarn lint"
   },
   "dependencies": {
     "is-https": "^2.0.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config-typescript": "latest",
+    "bili": "latest",
+    "connect": "latest",
+    "eslint": "latest",
+    "pem": "latest",
+    "rollup-plugin-typescript2": "latest",
+    "standard-version": "latest",
+    "ts-node": "latest",
+    "typescript": "latest"
   }
 }
