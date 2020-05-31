@@ -13,8 +13,8 @@ const defaults = {
 }
 type Options = Partial<typeof defaults>
 
-type MiddlewareFunction = (req: IncomingMessage, res: ServerResponse, next?: Function) => void
-type Middleware = MiddlewareFunction | {
+interface Middleware {
+  (req: IncomingMessage, res: ServerResponse, next?: Function): void
   create: (options: Options) => Middleware
 }
 
@@ -37,7 +37,8 @@ function create (_options?: Options): Middleware {
     const shouldRedirect = options.redirectUnknown ? !_isHttps : _isHttps === false
 
     if (shouldRedirect) {
-      const ـredirectURL = 'https://' + (options.redirectHost || req.headers.host) + _port + url
+      const _redirectHost = (options.redirectHost || req.headers.host || '').split(':')[0]
+      const ـredirectURL = 'https://' + _redirectHost + _port + url
       res.writeHead(options.statusCode, { Location: ـredirectURL })
       return res.end(ـredirectURL)
     }
