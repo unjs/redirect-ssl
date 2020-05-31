@@ -5,7 +5,7 @@ import isHTTPS from 'is-https'
 const defaults = {
   xForwardedProto: true,
   redirectPort: 443,
-  redirectHost: undefined,
+  redirectHost: '',
   redirectUnknown: true,
   enabled: true,
   statusCode: 307,

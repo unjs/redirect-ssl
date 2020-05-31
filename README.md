@@ -56,7 +56,7 @@ Redirect users to this port for HTTPS. (`:443` is omitted from URL as is default
 
 ### redirectHost
 
-- Default: `undefined`
+- Default: `req.headers.host`
 
 Redirects using this value as host, if omitted will use request host for redirects.
 
