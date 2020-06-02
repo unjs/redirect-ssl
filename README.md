@@ -99,7 +99,7 @@ An array of routes patterns for which redirection should be disabled.
 Add the `redirect-ssl` to the [`serverMiddleware`](https://nuxtjs.org/api/configuration-servermiddleware#usage) array within in the [nuxt.config.js](https://nuxtjs.org/api/configuration-server) file is the preferred usage:
 
 ```js
-import redirectSSL from 'redirectSSL'
+import redirectSSL from 'redirect-ssl'
 
 export default {
   serverMiddleware: [
