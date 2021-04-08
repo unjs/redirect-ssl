@@ -5,12 +5,13 @@
   "repository": "unjs/redirect-ssl",
   "license": "MIT",
   "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "bili src/index.ts --minimal",
+    "build": "siroc build",
     "dev": "ts-node --dir test server.ts",
     "lint": "eslint --ext ts .",
     "typecheck": "tsc --noEmit -p . && tsc --noEmit -p ./test",
@@ -25,11 +26,11 @@
     "@types/connect": "latest",
     "@types/node": "latest",
     "@types/pem": "latest",
-    "bili": "latest",
     "connect": "latest",
     "eslint": "latest",
     "pem": "latest",
     "rollup-plugin-typescript2": "latest",
+    "siroc": "latest",
     "standard-version": "latest",
     "ts-node": "latest",
     "typescript": "latest"
