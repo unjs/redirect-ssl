@@ -2,7 +2,7 @@
   "name": "redirect-ssl",
   "version": "2.0.0",
   "description": "Connect/Express middleware to enforce https",
-  "repository": "nuxt-contrib/redirect-ssl",
+  "repository": "unjs/redirect-ssl",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
