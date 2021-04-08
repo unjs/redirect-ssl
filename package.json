@@ -1,6 +1,6 @@
 {
   "name": "redirect-ssl",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Connect/Express middleware to enforce https",
   "repository": "unjs/redirect-ssl",
   "license": "MIT",
