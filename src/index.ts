@@ -38,9 +38,9 @@ function create (_options?: Options): Middleware {
 
     if (shouldRedirect) {
       const _redirectHost = (options.redirectHost || req.headers.host || '').split(':')[0]
-      const ـredirectURL = 'https://' + _redirectHost + _port + url
-      res.writeHead(options.statusCode, { Location: ـredirectURL })
-      return res.end(ـredirectURL)
+      const _redirectURL = 'https://' + _redirectHost + _port + url
+      res.writeHead(options.statusCode, { Location: _redirectURL })
+      return res.end(_redirectURL)
     }
 
     return next && next()
