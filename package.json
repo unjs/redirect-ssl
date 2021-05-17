@@ -19,7 +19,7 @@
     "test": "yarn lint && yarn typecheck"
   },
   "dependencies": {
-    "is-https": "^2.0.0"
+    "is-https": "^4.0.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "latest",
