@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/unjs/redirect-ssl/compare/v2.0.1...v3.0.0) (2021-05-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* **pkg:** add exports field
+* update is-https to 4.x
+
+### Features
+
+* **pkg:** add exports field ([597ac39](https://github.com/unjs/redirect-ssl/commit/597ac395cac0dfccf9482539d738475cf9c9d1e3))
+* update is-https to 4.x ([cbeab94](https://github.com/unjs/redirect-ssl/commit/cbeab94ab3d4d2f64fa36443bd8ec58a497eb6dd))
+
+
+### Bug Fixes
+
+* use ascii underscore char in variable name ([#39](https://github.com/unjs/redirect-ssl/issues/39)) ([e393ad6](https://github.com/unjs/redirect-ssl/commit/e393ad6b11fe76e43934f9737fdc5c1696e0806c))
+
 ### [2.0.1](https://github.com/unjs/redirect-ssl/compare/v2.0.0...v2.0.1) (2021-04-08)
 
 ## [2.0.0](https://github.com/unjs/redirect-ssl/compare/v1.4.1...v2.0.0) (2020-05-31)
