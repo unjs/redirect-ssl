@@ -46,6 +46,7 @@ app.use(redirectSSL.create({
   enabled: process.env.NODE_ENV === 'production'
 }))
 ```
+Note that some browsers may cache the redirect response, which can cause the redirect to still occur even if you've disabled it. If you experience this issue, you can try using incognito mode in your browser or clearing your cache and cookies for localhost.
 
 ## Options
 
