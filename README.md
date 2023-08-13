@@ -123,5 +123,5 @@ MIT. Made with 💖
 [npm-d-src]: https://img.shields.io/npm/dm/redirect-ssl?style=flat-square
 [npm-d-href]: https://npmjs.com/package/redirect-ssl
 
-[ci-src]: https://img.shields.io/github/workflow/status/unjs/redirect-ssl/ci/master?style=flat-square
+[ci-src]: https://img.shields.io/github/actions/workflow/status/unjs/redirect-ssl/ci.yml?style=flat-square&branch=main
 [ci-href]: https://github.com/unjs/redirect-ssl/actions?query=workflow%3Aci
